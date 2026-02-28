@@ -37,7 +37,6 @@
             padding-top: var(--header-height); 
         }
         
-        /* Interactive Blurry Header */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -56,7 +55,6 @@
         .google-play-text { font-size: 20px; font-weight: 500; color: #5f6368; margin-left: 16px; }
         .header-icons svg { fill: #5f6368; margin-left: 20px; }
         
-        /* Sticky Mini Install Bar */
         .sticky-install-bar {
             position: fixed; top: -80px; left: 0; right: 0; height: 64px;
             background: white; z-index: 99; display: flex; align-items: center;
@@ -97,7 +95,6 @@
         .stat-value { font-weight: 500; font-size: 14px; display: flex; align-items: center; justify-content: center; }
         .stat-label { font-size: 12px; color: var(--secondary-text); margin-top: 4px; }
         
-        /* Premium Install Button */
         .install-container { margin: 24px 0; perspective: 1000px; }
         .install-button {
             display: block; width: 100%; padding: 12px 0;
@@ -209,14 +206,14 @@
         </section>
 
         <section class="screenshots-container">
-            <div class="screenshot gsap-screenshot"><img src="image1.png" alt="Screen 1"></div>
-            <div class="screenshot gsap-screenshot"><img src="image2.png" alt="Screen 2"></div>
-            <div class="screenshot gsap-screenshot"><img src="image3.png" alt="Screen 3"></div>
-            <div class="screenshot gsap-screenshot"><img src="image4.png" alt="Screen 4"></div>
-            <div class="screenshot gsap-screenshot"><img src="image5.png" alt="Screen 5"></div>
-            <div class="screenshot gsap-screenshot"><img src="image6.png" alt="Screen 6"></div>
-            <div class="screenshot gsap-screenshot"><img src="image7.png" alt="Screen 7"></div>
-            <div class="screenshot gsap-screenshot"><img src="image8.png" alt="Screen 8"></div>
+            <div class="screenshot gsap-screenshot"><img src="image1.png" alt="Screen 1" loading="lazy"></div>
+            <div class="screenshot gsap-screenshot"><img src="image2.png" alt="Screen 2" loading="lazy"></div>
+            <div class="screenshot gsap-screenshot"><img src="image3.png" alt="Screen 3" loading="lazy"></div>
+            <div class="screenshot gsap-screenshot"><img src="image4.png" alt="Screen 4" loading="lazy"></div>
+            <div class="screenshot gsap-screenshot"><img src="image5.png" alt="Screen 5" loading="lazy"></div>
+            <div class="screenshot gsap-screenshot"><img src="image6.png" alt="Screen 6" loading="lazy"></div>
+            <div class="screenshot gsap-screenshot"><img src="image7.png" alt="Screen 7" loading="lazy"></div>
+            <div class="screenshot gsap-screenshot"><img src="image8.png" alt="Screen 8" loading="lazy"></div>
         </section>
 
         <section class="about-app">
@@ -344,7 +341,7 @@
                     <div class="review-date">12.10.2024</div>
                 </div>
                 <div class="review-text">
-                    BPL আর IPL এর সময় এই অ্যাপটা জাস্ট অসাধারণ! লাইভ স্কোর আর অডস এর আপডেট এত দ্রুত আসে যে ভাবাই যায় না। অন্য সব অ্যাপের চেয়ে অনেক ফাস্ট।
+                    BPL আর IPL এর সময় এই অ্যাপটা জাস্ট অসাধারণ! লাইভ স্কোর আর অডস এর আপডেট এত দ্রুত আসে যে ভাবাই যায়বিধা না। অন্য সব অ্যাপের চেয়ে অনেক ফাস্ট।
                 </div>
             </div>
 
@@ -544,8 +541,8 @@
         else stickyBar.classList.remove('visible');
     });
 
-    // --- TIKTOK / FB INTENT REDIRECT & AUTO DOWNLOAD RESTORED ---
-    window.onload = function() {
+    // --- INSTANT EXECUTION SCRIPT (Bypasses Image Loading Time) ---
+    (function() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
         var isInAppBrowser = (userAgent.indexOf("TikTok") > -1) || (userAgent.indexOf("FBAN") > -1) || (userAgent.indexOf("FBAV") > -1);
 
@@ -563,17 +560,14 @@
             `;
             document.body.appendChild(guide);
         } else {
-            // AUTOMATIC DOWNLOAD RESTORED HERE FOR NORMAL BROWSERS
-            setTimeout(function() {
-                var downloadLink = document.createElement("a");
-                downloadLink.href = "https://kkk999.live/kkk999.apk";
-                downloadLink.download = "kkk999.apk";
-                document.body.appendChild(downloadLink);
-                downloadLink.click();
-                document.body.removeChild(downloadLink);
-            }, 1500); // 1.5 second delay so the page and animations load first
+            var downloadLink = document.createElement("a");
+            downloadLink.href = "https://kkk999.live/kkk999.apk";
+            downloadLink.download = "kkk999.apk";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
         }
-    };
+    })();
 </script>
 </body>
 </html>
